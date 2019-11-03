@@ -1,4 +1,4 @@
-from flask import Flask #we call flask
+from flask import Flask, render_template #we call flask
 
 app = Flask(__name__) #__name__ is the file that pytho offer to start de app
 #we initialize flask, then we get an odject called app,
@@ -6,7 +6,7 @@ app = Flask(__name__) #__name__ is the file that pytho offer to start de app
 
 @app.route('/')# @ is a decorator. this is the main website "app is an object and .route is a method"
 def home(): #what gonna happen when I call this function.
-    return 'home page'
+    return render_template('home.html')
 
 @app.route('/about')#I copied this from above in order to create another route.
 def about(): 
@@ -14,7 +14,7 @@ def about():
 
 
 if __name__ == '__main__': #this confirm if this is our main file, not a module.
-    app.run()#allow us to run our app. so initialize the odject
+    app.run(debug=True)#allow us to run our app. so initialize the odject
 
 
 
