@@ -10,7 +10,7 @@ def home(): #what gonna happen when I call this function.
 
 @app.route('/about')#I copied this from above in order to create another route.
 def about(): 
-    return 'about page'
+    return render_template('about.html')
 
 
 if __name__ == '__main__': #this confirm if this is our main file, not a module.
